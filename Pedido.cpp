@@ -53,15 +53,17 @@ void Pedido::leerArchivo(string nombre) {
     archivo.close();
 }
 
-void Pedido::ticketCliente() const {
-    int totalGeneral = 0;
-
-    for (int index = 0; index < cantidad; index++) {
+void Pedido::ticketCliente() {
+    int total = 0;
+    int cont = 0;
+    for (int index = 0; index < cantidad; ++index) {
         if (arrPtrProductos[index] != nullptr) {
-            cout << arrPtrProductos[index]->str() << endl;
-            totalGeneral += arrPtrProductos[index]->calculaTotalPagar();
+            string productoInfo = arrPtrProductos[index]->str();
+            cout << productoInfo << endl;
+            total += arrPtrProductos[index]->calculaTotalPagar();
+            cont += 1;
         }
     }
-
-    cout << "Total a pagar: $" << totalGeneral << endl;
+    cout << cont << " " << "articulos" << endl;
+    cout << "Total a pagar $" << total << endl;
 }

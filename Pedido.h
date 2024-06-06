@@ -31,7 +31,7 @@ public:
 
 // Otros métodos 
     void leerArchivo (string _nombre);
-    void ticketCliente() const;
+    void ticketCliente();
 
 };
 #endif /* Pedido_h */
