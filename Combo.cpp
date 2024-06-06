@@ -11,18 +11,23 @@ Combo::Combo(string nombre, int precio, int peso, int clave)
     : Producto(nombre, precio, peso), clave(clave) {}
 
 
-int Combo::calculaTotalPagar() {
-    int total = getPrecio() * getPeso() * clave;
-
+int Combo::calculaTotalPagar(){
+    int precioSinClave = precio * peso * clave;
     if (clave == 1) {
-        total -= (total / 100) * 25;
-    } else if (clave == 2) {
-        total -= (total / 100) * 30;
+        int descuento = (precioSinClave / 100) * 25;
+        return precioSinClave - descuento;
+    } 
+    else if (clave == 2) {
+        int descuento = (precioSinClave / 100) * 30;
+        return precioSinClave - descuento;
     }
-
-    return total;
+    else {
+        return precioSinClave;
+    }
 }
 
-string Combo::str() {
-    return getNombre() + "-$" + to_string(getPrecio()) + "-" + to_string(getPeso()) + "-$" + to_string(calculaTotalPagar()) + "-" + to_string(clave);
+string Combo::str(){
+    int precioFinal = calculaTotalPagar();
+    return nombre + "-$" + to_string(precio) + "-" + to_string(peso) + "-$" + to_string(precioFinal) +
+    "-" + to_string(clave);
 }

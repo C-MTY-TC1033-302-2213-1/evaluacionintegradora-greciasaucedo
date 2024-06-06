@@ -9,6 +9,7 @@ Fecha: 6/junio/2024
 #define Producto_h
 
 #include <string>
+#include <sstream>
 
 using namespace std;
 

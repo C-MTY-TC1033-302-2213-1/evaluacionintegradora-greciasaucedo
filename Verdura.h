@@ -25,7 +25,6 @@ class Verdura : public Producto {
     // Otros métodos
         string str();
         int calculaTotalPagar();
-
 };
 
 #endif /* Verdura_h */

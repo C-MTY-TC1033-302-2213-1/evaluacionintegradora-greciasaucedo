@@ -8,9 +8,16 @@ Fecha: 6/junio/2024
 #include "Producto.h"
 
 // Constructores
-Producto::Producto() : nombre("Grecia Saucedo"), precio(839374), peso(18) {}
-Producto::Producto(string _nombre, int _precio, int _peso)
-    : nombre(_nombre), precio(_precio), peso(_peso) {}
+Producto::Producto() {
+    nombre = "Grecia";
+    precio = 839374;
+    peso = 18;
+}
+Producto::Producto(string _nombre, int _precio, int _peso) {
+    nombre = _nombre;
+    precio = _precio;
+    peso = _peso;
+}
 
 // Setters
 void Producto::setNombre(string _nombre) {
@@ -36,4 +43,13 @@ int Producto::getPrecio() {
 
 int Producto::getPeso() {
     return peso;
+}
+
+string Producto::str(){
+    int precioFinal = calculaTotalPagar();
+    return nombre + "-$" + to_string(precio) + "-" + to_string(peso) + "-$" + to_string(precioFinal);
+}
+
+int Producto::calculaTotalPagar(){
+    return precio * peso;
 }
