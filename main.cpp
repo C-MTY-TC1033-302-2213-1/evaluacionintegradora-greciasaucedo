@@ -1,10 +1,9 @@
-//
-//  main.cpp
-//  ExamenTC1030JUNIO2023
-//
-//  Created by Ma. Guadalupe Roque Díaz de León on 06/06/23.
-//
-
+/*
+Nombre: Grecia Klarissa Saucedo Sandoval 
+Matricula: A00839374
+Carrera: ITC
+Fecha: 2/junio/2024 
+*/
 #include <iostream>
 #include "Pedido.h"
 
